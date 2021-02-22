@@ -4,4 +4,9 @@ new Vue({
         login() {
             location.href = '/dashboard';
         },
-    });
+
+        ticketDetail(id) {
+            location.href = '/ticket/' + id;
+        },
+    }
+});

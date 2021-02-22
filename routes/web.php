@@ -24,6 +24,8 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'] );
 
 Route::get('/tickets', [DashboardController::class, 'tickets'] );
 
+Route::get( '/ticket/{id}', [BlogController::class, 'detail']);
+
 Route::get('/knowledgebase', [DashboardController::class, 'knowledgebase'] );
 
 Route::get('/acp', [DashboardController::class, 'acp'] );

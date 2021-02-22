@@ -39,26 +39,26 @@
 
             <!-- Offene Tickets -->
             <h4>Offene Tickets </h4>
-            <div class="col-md-12">
-                <table class="table">
-                    <thead class="bg-secondary text-white">
-                        <tr>
-                            <th scope="col" class="col-md-2">ID</th>
-                            <th scope="col" class="col-md-4">Betreff</th>
-                            <th scope="col" class="col-md-6">Abteilung</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($tickets as $ticket)
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+            <table class="table">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th scope="col" class="col-md-2">ID</th>
+                        <th scope="col" class="col-md-5">Departement</th>
+                        <th scope="col" class="col-md-5">Subject</th>
+                    </tr>
+                </thead>
+            </table>
+            @foreach($openTickets as $ticket)
+            <div class="list-group-item list-group-item-action" aria-current="true">
+                <a href="tickeDetail ( {{ $ticket->id }} )">
+                    <div class="row">
+                        <b class="col-md-2">{{$ticket->ticId}}</b>
+                        <p class="col-md-5">{{$ticket->ticDepartement}}</p>
+                        <p class="col-md-5">{{$ticket->ticSubject}}</p>
+                    </div>
+                </a>
             </div>
+            @endforeach
         </div>
     </body>
     @endsection

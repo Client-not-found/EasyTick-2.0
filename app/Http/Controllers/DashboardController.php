@@ -15,17 +15,23 @@ class DashboardController extends Controller
             'password' => 'required',
         ]);
 
-        return view('dashboard');
+        return view('dashboard',[
+            'tickets' => Ticket::all(),
+            'openTickets' => Ticket::where("ticStatus", "Open")->get()
+        ]);
     }
 
     public function dashboard () {
         return view('dashboard',[
             'tickets' => Ticket::all(),
+            'openTickets' => Ticket::where("ticStatus", "Open")->get()
         ]);
     }
 
     public function tickets () {
-        return view('tickets');
+        return view('tickets',[
+            'tickets' => Ticket::all(),
+        ]);
     }
 
     public function knowledgebase () {
